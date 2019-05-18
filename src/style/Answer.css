@@ -1,0 +1,7 @@
+.answer{
+    cursor: pointer;
+}
+
+.marked{
+    background-color: green;
+}
