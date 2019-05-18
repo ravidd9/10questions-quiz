@@ -78,30 +78,23 @@ class Test extends Component {
         }
     }
 
-    fillAnswered = () => {
+    saveAnswer = answer => {
         let answered = { ...this.state.answered }
-        answered[this.state.currentQuestion] = this.state.currentAnswer
+        answered[this.state.currentQuestion] = answer
         this.setState({ answered })
     }
 
-    saveAnswer = answer => this.setState({ currentAnswer: answer })
 
-    reMark = () => {
-        if(this.state.answered[this.state.currentQuestion]){
-            this.setState({ currentAnswer: this.state.answered[this.state.currentQuestion] })
-        }else{
-            this.setState({ currentAnswer: null })
-        }
-    }
     changeQuestion = updated => {
-        if(this.state.currentAnswer){
-            this.fillAnswered()
-            this.reMark()
+        if(this.state.answered[this.state.currentQuestion]){
+            // this.reMark()
             this.setState({isEmptyAnswer : false})
-        }else{
+            this.setState({ currentQuestion: updated })
+        }else if(updated < this.state.currentQuestion && updated > 0){
+            this.setState({ currentQuestion: updated })
+        }else {
             this.setState({isEmptyAnswer : true})
         }
-        this.setState({ currentQuestion: updated })
     }
 
     // componentDidMount = () =>{
@@ -128,7 +121,7 @@ class Test extends Component {
                     <div>
                         <Question
                             saveAnswer={this.saveAnswer}
-                            currentAnswer={this.state.currentAnswer}
+                            currentAnswer={this.state.answered[this.state.currentQuestion]}
                             question={question}
                             answered={this.state.answered} />
                         <Navigation
