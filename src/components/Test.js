@@ -78,17 +78,30 @@ class Test extends Component {
         }
     }
 
-    fillAnswered = () =>{
-        let answered = {...this.state.answered}
+    fillAnswered = () => {
+        let answered = { ...this.state.answered }
         answered[this.state.currentQuestion] = this.state.currentAnswer
-        this.setState({answered})
+        this.setState({ answered })
     }
 
-    saveAnswer = answer => this.setState({currentAnswer: answer})
+    saveAnswer = answer => this.setState({ currentAnswer: answer })
 
+    reMark = () => {
+        if(this.state.answered[this.state.currentQuestion]){
+            this.setState({ currentAnswer: this.state.answered[this.state.currentQuestion] })
+        }else{
+            this.setState({ currentAnswer: null })
+        }
+    }
     changeQuestion = updated => {
-        this.fillAnswered()
-        this.setState({ currentQuestion: updated})
+        if(this.state.currentAnswer){
+            this.fillAnswered()
+            this.reMark()
+            this.setState({isEmptyAnswer : false})
+        }else{
+            this.setState({isEmptyAnswer : true})
+        }
+        this.setState({ currentQuestion: updated })
     }
 
     // componentDidMount = () =>{
@@ -113,8 +126,15 @@ class Test extends Component {
             <div id="test">
                 {this.state.currentQuestion > 0 ?
                     <div>
-                        <Question saveAnswer={this.saveAnswer} question={question} />
-                        <Navigation currentQuestion={this.state.currentQuestion} changeQuestion={this.changeQuestion} />
+                        <Question
+                            saveAnswer={this.saveAnswer}
+                            currentAnswer={this.state.currentAnswer}
+                            question={question}
+                            answered={this.state.answered} />
+                        <Navigation
+                            currentQuestion={this.state.currentQuestion}
+                            changeQuestion={this.changeQuestion} />
+                        {this.state.isEmptyAnswer ? <div>Please enter your answer</div> : null}
                     </div> :
                     <Grade questions={this.state.questions} answered={this.state.answered} />}
             </div>

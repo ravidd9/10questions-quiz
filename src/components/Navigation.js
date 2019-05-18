@@ -5,17 +5,17 @@ import '../style/Navigation.css';
 class Navigation extends Component {
 
     nextQuestion = () => {
-        if(this.props.currentQuestion < 10){
+        if (this.props.currentQuestion < 10) {
             this.props.changeQuestion(this.props.currentQuestion + 1)
-
-
-        }else{
-            this.props.changeQuestion(-1) 
+        } else {
+            this.props.changeQuestion(-1)
         }
     }
-    prevQuestion = () => this.props.currentQuestion > 1 ?
-        this.props.changeQuestion(this.props.currentQuestion - 1) :
-        null
+    prevQuestion = () => {
+        if (this.props.currentQuestion > 1) {
+            this.props.changeQuestion(this.props.currentQuestion - 1)
+        }
+    }
 
     render() {
         let currentQuestion = this.props.currentQuestion

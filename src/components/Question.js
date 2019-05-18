@@ -5,22 +5,18 @@ import Answer from './Answer';
 
 
 class Question extends Component {
-    constructor() {
-        super()
-        this.state = {
-            marked: null
+
+    getMarked =() =>{
+        if(this.props.answered[this.props.question.number]){
+            return this.props.answered[this.props.question.number]
+        }else{
+            return this.props.currentAnswer
         }
-    }   
-
-    saveAnswer = index => {
-        this.setState({ marked: index }, function () {
-            this.props.saveAnswer(this.state.marked)
-        })
     }
-
 
     render() {
         let question = this.props.question
+        let marked = this.getMarked()
         return (
             <div className="question">
                 <div>Question #{question.number}:</div>
@@ -30,8 +26,8 @@ class Question extends Component {
                         key={i}
                         index={i + 1}
                         answer={a}
-                        marked={this.state.marked}
-                        saveAnswer={this.saveAnswer} />)}
+                        marked={marked}
+                        saveAnswer={this.props.saveAnswer} />)}
                 </ol>
             </div>
         );
