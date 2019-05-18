@@ -88,7 +88,7 @@ class Test extends Component {
 
     changeQuestion = updated => {
         this.fillAnswered()
-        this.setState({ currentQuestion: updated , marked: null})
+        this.setState({ currentQuestion: updated})
     }
 
     // componentDidMount = () =>{

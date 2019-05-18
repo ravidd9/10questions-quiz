@@ -5,16 +5,12 @@ import Answer from './Answer';
 
 
 class Question extends Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
-            marked: props.marked
+            marked: null
         }
     }   
-
-    componentDidMount = () =>{
-        this.setState({marked: null})
-    }
 
     saveAnswer = index => {
         this.setState({ marked: index }, function () {
