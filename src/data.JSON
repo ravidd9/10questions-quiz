@@ -7,56 +7,56 @@
     },
     {
         "number": 2,
-        "question": "1+1",
-        "correct": 4,
+        "question": "2+2",
+        "correct": 1,
         "answers": ["4", "7", "9", "2"]
     },
     {
         "number": 3,
-        "question": "1+1",
-        "correct": 4,
+        "question": "5+2",
+        "correct": 2,
         "answers": ["4", "7", "9", "2"]
     },
     {
         "number": 4,
-        "question": "1+1",
-        "correct": 4,
+        "question": "18-9",
+        "correct": 3,
         "answers": ["4", "7", "9", "2"]
     },
     {
         "number": 5,
-        "question": "1+1",
-        "correct": 4,
+        "question": "17-10",
+        "correct": 2,
         "answers": ["4", "7", "9", "2"]
     },
     {
         "number": 6,
-        "question": "1+1",
+        "question": "2*1",
         "correct": 4,
         "answers": ["4", "7", "9", "2"]
     },
     {
         "number": 7,
-        "question": "1+1",
+        "question": "8-6",
         "correct": 4,
         "answers": ["4", "7", "9", "2"]
     },
     {
         "number": 8,
-        "question": "1+1",
-        "correct": 4,
+        "question": "8/2",
+        "correct": 1,
         "answers": ["4", "7", "9", "2"]
     },
     {
         "number": 9,
-        "question": "1+1",
-        "correct": 4,
+        "question": "9+0",
+        "correct": 3,
         "answers": ["4", "7", "9", "2"]
     },
     {
         "number": 10,
-        "question": "1+1",
-        "correct": 4,
+        "question": "1+1+1+1",
+        "correct": 1,
         "answers": ["4", "7", "9", "2"]
     }
 ]
