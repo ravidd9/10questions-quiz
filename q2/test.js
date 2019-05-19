@@ -1,4 +1,4 @@
-const showMe = function(element, flag){flag ? element.show() : element.hide()}
+const showMe = function(element, flag){element.show()}
 
 let div = $("#hello")
 showMe(div, true)
