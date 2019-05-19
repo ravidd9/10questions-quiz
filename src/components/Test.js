@@ -61,7 +61,7 @@ class Test extends Component {
                         <Navigation
                             currentQuestion={this.state.currentQuestion}
                             changeQuestion={this.changeQuestion} />
-                        {this.state.isEmptyAnswer ? <div>Please enter your answer</div> : null}
+                        {this.state.isEmptyAnswer ? <div id="message">Please enter your answer</div> : null}
                     </div> :
                     <Grade questions={questions} answered={this.state.answered} />}
             </div>

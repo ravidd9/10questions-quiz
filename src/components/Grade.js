@@ -21,7 +21,7 @@ class Grade extends Component {
     render() {
         return (
             <div id="grade">
-                your grade is: {this.getGrade()}
+                Your grade is: {this.getGrade()}
             </div>
         );
     }

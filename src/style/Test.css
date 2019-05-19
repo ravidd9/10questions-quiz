@@ -1,10 +1,22 @@
 #test{
     font-family: 'Montserrat', sans-serif;
+
+    margin: 10%;
+    margin-top: 5%;
+
     display: grid;
-    justify-self: center;
-    align-self: center;
+    grid-template-columns: auto;
+    justify-items: center;
+    border: 2px solid black;
+    border-radius: 25px;
+    background-color: #55efc4;
 
-    margin-left: 10%;
-    margin-top: 10%;
+}
 
+#message{
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    font-size: 200%;
+    margin-bottom: 10%;
 }

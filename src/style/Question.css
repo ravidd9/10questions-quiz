@@ -1,7 +1,12 @@
-.question{
-
+.question {
+    display: grid;
+    justify-items: center;
 }
 
-.question>li{
-    cursor: pointer;
+.question>h1 {
+    text-align: center;
+}
+
+.question>h2 {
+    text-align: center;
 }

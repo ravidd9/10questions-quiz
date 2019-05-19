@@ -6,10 +6,10 @@ import Answer from './Answer';
 
 class Question extends Component {
 
-    getMarked =() =>{
-        if(this.props.answered[this.props.question.number]){
+    getMarked = () => {
+        if (this.props.answered[this.props.question.number]) {
             return this.props.answered[this.props.question.number]
-        }else{
+        } else {
             return this.props.currentAnswer
         }
     }
@@ -19,16 +19,14 @@ class Question extends Component {
         let marked = this.getMarked()
         return (
             <div className="question">
-                <div>Question #{question.number}:</div>
-                <div>{question.question}</div>
-                <ol>
-                    {question.answers.map((a, i) => <Answer
-                        key={i}
-                        index={i + 1}
-                        answer={a}
-                        marked={marked}
-                        saveAnswer={this.props.saveAnswer} />)}
-                </ol>
+                <h1>Question #{question.number}:</h1>
+                <h2>{question.question}</h2>
+                {question.answers.map((a, i) => <Answer
+                    key={i}
+                    index={i + 1}
+                    answer={a}
+                    marked={marked}
+                    saveAnswer={this.props.saveAnswer} />)}
             </div>
         );
     }

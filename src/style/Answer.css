@@ -1,7 +1,14 @@
-.answer{
+.answer {
     cursor: pointer;
+    border: 1px solid black;
+    width: 250px;
+    margin-bottom: 5%;
+    background-color: #fff;
+    font-size: 200%;
+    border-radius: 25px;
+    text-align: center;
 }
 
-.marked{
-    background-color: green;
+.marked {
+    background-color: #00b894;
 }
